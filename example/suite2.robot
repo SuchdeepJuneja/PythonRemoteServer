@@ -32,4 +32,4 @@ Count Items in Directory
 Failing Example
     Log    ${ADDRESS}:${PORT}
     Strings Should Be Equal    Hello    Hello
-    Strings Should Be Equal    not      equal
+    Strings Should Be Equal    equal      equal
