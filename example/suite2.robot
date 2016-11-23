@@ -6,11 +6,11 @@ ${PORT}       8888
 *** Settings ***
 Library         pabot.PabotLib
 Library         Remote    http://${ADDRESS}:${PORT}
-Suite Setup     Get a device
-Suite Teardown  Release the device
+Suite Setup     Get a resource
+Suite Teardown  Release the resource
 
 *** Keywords ***
-Get a device
+Get a resource
    ${valuesetname}=    pabot.PabotLib.Acquire Value Set
    ${tmp}=             Get Value From Set   address
    Set Global Variable  ${ADDRESS}  ${tmp}
@@ -20,7 +20,7 @@ Get a device
    Log  ${PORT}
    Log    ${ADDRESS}:${PORT}
 
-Release the device
+Release the resource
    Log    ${ADDRESS}:${PORT}
    Sleep    5s
    pabot.PabotLib.Release Value Set
