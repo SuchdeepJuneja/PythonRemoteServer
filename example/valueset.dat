@@ -1,0 +1,7 @@
+[Server1]
+ADDRESS=127.0.0.1
+PORT=8271
+
+[Server2]
+ADDRESS=localhost
+PORT=8272
