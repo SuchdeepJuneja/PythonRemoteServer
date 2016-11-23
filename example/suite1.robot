@@ -22,6 +22,8 @@ Close system
    Log   After value set release others can obtain the variable values
 
 *** Variables ***
+    ${ADDRESS}=   Get Value From Set   address
+    ${PORT}=   Get Value From Set   port
 
 
 *** Test Cases ***
