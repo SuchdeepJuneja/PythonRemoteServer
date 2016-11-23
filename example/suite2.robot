@@ -1,24 +1,18 @@
-*** Variables ***
-${PORT}       8888
-# ${ADDRESS}=    localhost
-
-
 *** Settings ***
 Library         pabot.PabotLib
-Library         Remote    http://${ADDRESS}:${PORT}
 Suite Setup     Get a resource
 Suite Teardown  Release the resource
+
 
 *** Keywords ***
 Get a resource
    ${valuesetname}=    pabot.PabotLib.Acquire Value Set
-   ${tmp}=             Get Value From Set   address
-   Set Global Variable  ${ADDRESS}  ${tmp}
-   Log  ${ADDRESS}
+   ${tmp}=             Get Value From Set   ADDRESS
+   Set Suite Variable  ${ADDRESS}  ${tmp}
    ${tmp}=   Get Value From Set   port
-   Set Global Variable  ${PORT}  ${tmp}
-   Log  ${PORT}
+   Set Suite Variable  ${PORT}  ${tmp}
    Log    ${ADDRESS}:${PORT}
+   Import Library    Remote    http://${ADDRESS}:${PORT}
 
 Release the resource
    Log    ${ADDRESS}:${PORT}
