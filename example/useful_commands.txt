@@ -1,0 +1,6 @@
+# useful commands
+./examplelibrary.py 127.0.0.1 8272
+
+python /usr/local/lib/python2.7/dist-packages/pabot/PabotLib.py ./valueset.dat 127.0.0.1 8270
+
+pabot --verbose --processes 2 --pabotlibhost 127.0.0.1 --pabotlibport 8270 *.robot
